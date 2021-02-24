@@ -12,22 +12,17 @@ namespace HubSpot.Main
     {
         static void Main(string[] args)
         {
-            var getEndpoint = "http://data.fixer.io/api/latest"; 
-            var postEndpoint = "http://......."; 
+            var getEndpoint = "/posts"; 
+            var postEndpoint = "/posts"; 
             
-            var httpHandler = new HttpHandler("bd18103ee5a98f08cb8872c817485093");
+            var httpHandler = new HttpHandler("bd18103ee5a98f08cb8872c817485093", "https://jsonplaceholder.typicode.com/");
             var solution = new Solution(httpHandler);
             
             var result = solution.Run(getEndpoint, postEndpoint).Result;
             
-            if(result.IsSuccessStatusCode)
-                Console.WriteLine("POST request was accepted.");
-            else
-            {
-                var body = result.Content.ReadAsStringAsync().Result; 
-                Console.WriteLine($"POST request rejected : invalid, {body}");   
-            }
-                
+            var body = result.Content.ReadAsStringAsync().Result;
+            
+            Console.WriteLine($"POST request was {(result.IsSuccessStatusCode ? "Accepted" : "Rejected")}, {body}");
         }
     }
 }
