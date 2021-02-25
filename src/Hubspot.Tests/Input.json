@@ -1,0 +1,58 @@
+{
+  "messages": [
+    {
+      "content": "The quick brown fox jumps over the lazy dog",
+      "fromUserId": 50210,
+      "timestamp": 1529338342000,
+      "toUserId": 67452
+    },
+    {
+      "content": "Pangrams originate in the discotheque",
+      "fromUserId": 67452,
+      "timestamp": 1529075415000,
+      "toUserId": 50210
+    },
+    {
+      "content": "Have you planned your holidays this year yet?",
+      "fromUserId": 67452,
+      "timestamp": 1529542953000,
+      "toUserId": 50210
+    },
+    {
+      "content": "Strange noises have been heard on the moors",
+      "fromUserId": 78596,
+      "timestamp": 1533112961000,
+      "toUserId": 50210
+    },
+    {
+      "content": "You go straight ahead for two hundred yards and then take the first right turn",
+      "fromUserId": 50210,
+      "timestamp": 1533197225000,
+      "toUserId": 78596
+    },
+    {
+      "content": "It's a privilege and an honour to have known you",
+      "fromUserId": 78596,
+      "timestamp": 1533118270000,
+      "toUserId": 50210
+    }
+  ],
+  "userId": 50210,
+  "users": [
+    {
+      "avatar": "octocat.jpg",
+      "firstName": "John",
+      "lastName": "Doe",
+      "id": 67452
+    },
+    {
+      "avatar": "genie.png",
+      "firstName": "Michael",
+      "lastName": "Crowley",
+      "id": 78596
+    }
+  ]
+}
+
+var inputJson =
+"{\"messages\": [{\"content\": \"The quick brown fox jumps over the lazy dog\",\"fromUserId\": 50210,\"timestamp\": 1529338342000,\"toUserId\": 67452},{\"content\": \"Pangrams originate in the discotheque\",\"fromUserId\": 67452,\"timestamp\": 1529075415000,\"toUserId\": 50210},{\"content\": \"Have you planned your holidays this year yet?\",\"fromUserId\": 67452,\"timestamp\": 1529542953000,\"toUserId\": 50210},{\"content\": \"Strange noises have been heard on the moors\",\"fromUserId\": 78596,\"timestamp\": 1533112961000,\"toUserId\": 50210},{\"content\": \"You go straight ahead for two hundred yards and then take the first right turn\",\"fromUserId\": 50210,\"timestamp\": 1533197225000,\"toUserId\": 78596},{\"content\": \"It's a privilege and an honour to have known you\",\"fromUserId\": 78596,\"timestamp\": 1533118270000,\"toUserId\": 50210}],\"userId\": 50210,\"users\": [{\"avatar\": \"octocat.jpg\",\"firstName\": \"John\",\"lastName\": \"Doe\",\"id\": 67452},{\"avatar\": \"genie.png\",\"firstName\": \"Michael\",\"lastName\": \"Crowley\",\"id\": 78596}]}"; 

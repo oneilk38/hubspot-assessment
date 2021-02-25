@@ -2,28 +2,72 @@ using System.Collections.Generic;
 
 namespace HubSpot.Main
 {
-    // The response from the GET request will be deserialised to this type 
-
-    public class HubspotInput
+    // INPUT 
+    public class Message
     {
-        public int userId { get; set; }
+        public string content { get; set; }
+        public int fromUserId { get; set; }
+        public long timestamp { get; set; }
+        public int toUserId { get; set; }
+    }
+
+    public class User
+    {
+        public string avatar { get; set; }
+        public string firstName { get; set; } 
+        public string lastName { get; set; }
         public int id { get; set; }
-        public string title { get; set; }
-        public string body { get; set; }
     }
     
-    // The output type that we will POST to hubspot API 
-    public class HubspotOutput
+    // The response from the GET request will be deserialised to this type 
+    public class Dataset
     {
+        public Message[] messages { get; set; }
         public int userId { get; set; }
-        public string title { get; set; }
-        public string body { get; set; }
+        public User[] users { get; set; }
+    }
 
-        public HubspotOutput()
+    // OUTPUT 
+    public class MostRecentMessage
+    {
+        public string content { get; set; }
+        public long timestamp { get; set; }
+        public int userId { get; set; }
+
+        public MostRecentMessage(Message latestMessage)
         {
-            userId = 999;
-            title = "Book title";
-            body = "A B C D E F G H .....";
+            content = latestMessage.content;
+            timestamp = latestMessage.timestamp;
+            userId = latestMessage.fromUserId; 
         }
+    }
+    
+    public class Conversation
+    {
+        public string avatar { get; set; }
+        public string firstName { get; set; } 
+        public string lastName { get; set; }
+        public MostRecentMessage mostRecentMessage { get; set; }
+        public int totalMessages { get; set; }
+        public int userId { get; set; }
+        
+        public Conversation(User otherUser, MostRecentMessage message, int conversationSize)
+        {
+            avatar = otherUser.avatar;
+            firstName = otherUser.firstName;
+            lastName = otherUser.lastName;
+            mostRecentMessage = message;
+            totalMessages = conversationSize;
+            userId = otherUser.id; 
+        }
+    }
+    
+    
+    // The output type that we will POST to hubspot API 
+    public class Conversations
+    {
+        public Conversation[] conversations { get; set; }
+
+        public Conversations(Conversation[] conversations) => this.conversations = conversations;
     } 
 }

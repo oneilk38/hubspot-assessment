@@ -1,0 +1,28 @@
+{
+  "conversations": [
+    {
+      "avatar": "genie.png",
+      "firstName": "Michael",
+      "lastName": "Crowley",
+      "mostRecentMessage": {
+        "content": "You go straight ahead for two hundred yards and then take the first right turn",
+        "timestamp": 1533197225000,
+        "userId": 50210
+      },
+      "totalMessages": 3,
+      "userId": 78596
+    },
+    {
+      "avatar": "octocat.jpg",
+      "firstName": "John",
+      "lastName": "Doe",
+      "mostRecentMessage": {
+        "content": "Have you planned your holidays this year yet?",
+        "timestamp": 1529542953000,
+        "userId": 67452
+      },
+      "totalMessages": 3,
+      "userId": 67452
+    }
+  ]
+}

@@ -12,13 +12,13 @@ namespace HubSpot.Main
     {
         static void Main(string[] args)
         {
-            var getEndpoint = "/posts"; 
-            var postEndpoint = "/posts"; 
+            var getEndpoint = "/dataset"; 
+            var postEndpoint = "/result"; 
             
-            var httpHandler = new HttpHandler("bd18103ee5a98f08cb8872c817485093", "https://jsonplaceholder.typicode.com/");
-            var solution = new Solution(httpHandler);
+            var httpHandler = new HttpHandler("0b06bedc60f23c486966218e84b6", "https://candidate.hubteam.com/candidateTest/v3/problem");
+            var inbox = new Inbox(httpHandler);
             
-            var result = solution.Run(getEndpoint, postEndpoint).Result;
+            var result = inbox.GetConversations(getEndpoint, postEndpoint).Result;
             
             var body = result.Content.ReadAsStringAsync().Result;
             

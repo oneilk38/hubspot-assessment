@@ -7,7 +7,7 @@ namespace HubSpot.Main
     // We can mock out this interface and check that our solution works correctly at each step 
     public interface IHubspotHttpHandler
     {
-        public Task<HubspotInput> GetData(string endpoint);
-        public Task<HttpResponseMessage> PostData(string endpoint, HubspotOutput data); 
+        public Task<Dataset> GetData(string endpoint);
+        public Task<HttpResponseMessage> PostData(string endpoint, Conversations data); 
     }
 }

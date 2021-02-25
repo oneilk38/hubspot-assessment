@@ -5,15 +5,7 @@ namespace HubSpot.Main
 {
     public class Serialization
     {
-        public static T Deserialise<T>(string json) => JsonSerializer.Deserialize<T>(json, new JsonSerializerOptions
-        {
-            //PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        }); 
-        public static string Serialize<T>(T payload) => JsonSerializer.Serialize(payload, new JsonSerializerOptions
-        {
-            //PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        });
+        public static T Deserialise<T>(string json) => JsonSerializer.Deserialize<T>(json); 
+        public static string Serialize<T>(T payload) => JsonSerializer.Serialize(payload);
     }
 }
